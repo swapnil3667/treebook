@@ -22,6 +22,10 @@ group :production do
 	gem 'pg'
 end
 
+group :development do
+    gem 'capistrano'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
