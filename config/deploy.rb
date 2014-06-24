@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'treebook'
+set :repo_url, 'https://github.com/swapnil3667/treebook.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -35,8 +35,8 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :keep_releases, 5
 
 set :application, "treebook"
-set :repository, "master"
-
+set :repository, "."
+set :local_repository, "."
 set :deploy_to, "C:\Users\swapnilk\Documents\treebook"
 
 set :scm, :git
@@ -45,9 +45,9 @@ set :branch, "master"
 set :rails_env, "production"
 set :deploy_via, :copy
 
-set :rails_env, "production"
+set :ssh_options, { :forward_agent => true, :port => 4321 }
+set :keep_releases, 5
 
-server "www.example.com", :app, :web, :db, :primary => true
 
 namespace :deploy do
 
