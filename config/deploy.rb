@@ -38,7 +38,7 @@ set :scm, :git
 set :application, "treebook"
 set :repository, "."
 set :local_repository, "."
-set :deploy_to, "C:\Users\swapnilk\Documents\treebook"
+set :deploy_to, "C:/Users/swapnilk/Documents/treebook"
 set :pty, true
 
 set :format, :pretty
@@ -56,7 +56,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-     run "cd #{deploy_to} bundle install"
+     #un "cd #{deploy_to} bundle install"
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
     end
