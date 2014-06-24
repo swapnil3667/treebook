@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-#set :application, 'treebook'
-#set :repo_url, 'https://github.com/swapnil3667/treebook.git'
+set :application, 'treebook'
+set :repo_url, 'https://github.com/swapnil3667/treebook.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -33,13 +33,14 @@ lock '3.2.1'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :scm, :git
 
 set :application, "treebook"
 set :repository, "."
 set :local_repository, "."
 set :deploy_to, "C:\Users\swapnilk\Documents\treebook"
 
-set :scm, :git
+
 set :branch, "master"
 
 set :rails_env, "production"
@@ -54,6 +55,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
+     run "cd #{deploy_to} bundle install"
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
     end
