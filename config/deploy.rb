@@ -39,8 +39,9 @@ set :application, "treebook"
 set :repository, "."
 set :local_repository, "."
 set :deploy_to, "C:\Users\swapnilk\Documents\treebook"
+set :pty, true
 
-
+set :format, :pretty
 set :branch, "master"
 
 set :rails_env, "production"
